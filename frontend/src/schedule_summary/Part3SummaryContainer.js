@@ -3,7 +3,6 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import Tooltip from '../app/components/Tooltip'
 import { _calculateNonCompliancePayable } from './PenaltySummaryContainer'
 import { SCHEDULE_PENALTY, SCHEDULE_SUMMARY } from '../constants/schedules/scheduleColumns'
-import { _handleCellsChanged } from '../compliance_reporting/ScheduleSummaryContainer'
 import { cellFormatNumeric, cellFormatTotal } from '../utils/functions'
 
 function tableData (

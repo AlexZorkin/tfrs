@@ -3,7 +3,7 @@ import { SCHEDULE_SUMMARY } from '../../../constants/schedules/scheduleColumns'
 import { cellFormatNumeric } from '../../../utils/functions'
 import ScheduleSummaryPart3 from '../../ScheduleSummaryPart3'
 import ScheduleSummaryPenalty from '../../ScheduleSummaryPenalty'
-import FontAwesome from '../../../app/FontAwesome'
+import FontAwesome from '../../../app/FontAwesome' // eslint-disable-line no-unused-vars
 
 describe('Calculate Part3', () => {
   test('basic credit positive scenarios', () => {
