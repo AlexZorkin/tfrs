@@ -1132,8 +1132,17 @@ class ComplianceReportCreateSerializer(serializers.ModelSerializer):
                     original_summary.diesel_class_previously_retained
                 summary.diesel_class_obligation = \
                     original_summary.diesel_class_obligation
-                summary.credits_offset_a = original_summary.credits_offset_a or \
-                    original_summary.credits_offset
+                
+                # if credit_offset_c exists, it means we gave back credits 
+                # in the previous supplemental report so credit_offset_a
+                # needs to be offset by credits_offset_c to account for this
+                # otherwise these credits could be claimed again
+                if original_summary.credits_offset_c > 0:
+                    summary.credits_offset_a = original_summary.credits_offset_a \
+                      - original_summary.credits_offset_c
+                else:
+                    summary.credits_offset_a = original_summary.credits_offset_a or \
+                        original_summary.credits_offset
 
                 if original_report.status.director_status_id == 'Rejected':
                     current = original_report

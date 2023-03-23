@@ -345,7 +345,6 @@ function Part3SupplementalData (
     const line25 = part3[SCHEDULE_SUMMARY.LINE_25][2].value
     const line26A = part3[SCHEDULE_SUMMARY.LINE_26_A][2].value
     part3[SCHEDULE_SUMMARY.LINE_26][2].value = 0
-    part3[SCHEDULE_SUMMARY.LINE_26_A][2].value = part3[SCHEDULE_SUMMARY.LINE_25][2].value * -1.0
     part3[SCHEDULE_SUMMARY.LINE_26_C][2].value = line26A + line25
   }
 
@@ -375,7 +374,6 @@ function populateSchedules (props, state, setState) {
 }
 
 function calculatePart3Payable (part3, period) {
-
   let credits = Number(part3[SCHEDULE_SUMMARY.LINE_26][2].value)
   const balance = Number(part3[SCHEDULE_SUMMARY.LINE_25][2].value)
 
