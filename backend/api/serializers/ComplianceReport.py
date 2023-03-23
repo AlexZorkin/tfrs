@@ -542,6 +542,8 @@ class ComplianceReportDetailSerializer(
                 if obj.summary.credits_offset_a is not None else Decimal(0)
             lines['26B'] = obj.summary.credits_offset_b \
                 if obj.summary.credits_offset_b is not None else Decimal(0)
+            lines['26C'] = obj.summary.credits_offset_c \
+                if obj.summary.credits_offset_c is not None else Decimal(0)
         else:
             lines['6'] = Decimal(0)
             lines['7'] = Decimal(0)
@@ -554,6 +556,7 @@ class ComplianceReportDetailSerializer(
             lines['26'] = Decimal(0)
             lines['26A'] = Decimal(0)
             lines['26B'] = Decimal(0)
+            lines['26C'] = Decimal(0)
 
         if obj.schedule_a:
             net_gasoline_class_transferred += \
